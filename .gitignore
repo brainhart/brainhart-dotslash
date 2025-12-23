@@ -1,0 +1,11 @@
+# Upstream source (fetched, not stored)
+/upstream/
+
+# Build artifacts (if building locally)
+/target/
+
+# OS files
+.DS_Store
+
+# claude local settings
+.claude/settings.local.json
