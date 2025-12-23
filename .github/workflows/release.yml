@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Create release
-        run: gh release create --repo ${{ github.repository }} "${GITHUB_REF#refs/tags/}" --title "${GITHUB_REF#refs/tags/}" --generate-notes
+        run: gh release create --repo ${{ github.repository }} "${GITHUB_REF#refs/tags/}" --title "${GITHUB_REF#refs/tags/}" --draft --notes ""
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
