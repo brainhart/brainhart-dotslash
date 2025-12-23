@@ -1,0 +1,6 @@
+# Patches are applied in order, one per line
+# Lines starting with # are comments
+# Example:
+#   core/0001-add-custom-provider.patch
+#   core/0002-fix-something.patch
+0001-s3-provider-add-aws-profile-support.patch

@@ -1,0 +1,30 @@
+Index: upstream/src/s3_provider.rs
+===================================================================
+--- upstream.orig/src/s3_provider.rs
++++ upstream/src/s3_provider.rs
+@@ -27,6 +27,8 @@ struct S3ProviderConfig {
+     bucket: String,
+     key: String,
+     region: Option<String>,
++    /// AWS CLI profile to use (from ~/.aws/credentials)
++    profile: Option<String>,
+ }
+ 
+ impl Provider for S3Provider {
+@@ -41,12 +43,16 @@ impl Provider for S3Provider {
+             bucket,
+             key,
+             region,
++            profile,
+         } = <_>::deserialize(provider_config)?;
+         let mut command = std::process::Command::new("aws");
+         command.args(["s3", "cp"]);
+         if let Some(region) = region {
+             command.args(["--region", &region]);
+         }
++        if let Some(profile) = profile {
++            command.args(["--profile", &profile]);
++        }
+         command.arg(format!("s3://{bucket}/{key}"));
+         command.arg(destination);
+         let output = command
