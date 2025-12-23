@@ -1,0 +1,13 @@
+Index: upstream/Cargo.toml
+===================================================================
+--- upstream.orig/Cargo.toml
++++ upstream/Cargo.toml
+@@ -2,7 +2,7 @@
+ 
+ [package]
+ name = "dotslash"
+-version = "0.5.8"
++version = "0.5.9-pre"
+ authors = ["Michael Bolin <bolinfest@gmail.com>", "Andres Suarez <zertosh@gmail.com>"]
+ edition = "2024"
+ rust-version = "1.85"
